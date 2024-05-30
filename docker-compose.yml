@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: wallet-scanner
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /var/www/app
+    volumes:
+      - ./:/var/www/app
+    command: python main.py
+    env_file:
+      - .env
